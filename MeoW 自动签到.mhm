@@ -6,7 +6,7 @@
   "version": "1.5.9",
   "author": "local",
   "homepage": "",
-  "icon": "https://appimg-drcn.dbankcdn.com/application/icon144/phone/51a2f70e5f114107aeccc954554a6326.webp",
+  "icon": "https://raw.githubusercontent.com/onmiui/MITM/main/icon/meow.png",
   "updatedAt": "2026-11-21",
   "content": "#!name=MeoW 自动签到\n#!desc=按模块内定时脚本的时间自动完成 MeoW 猫咪签到；首次打开「我的猫粮」页会自动捕获你自己的 unionId，通知会显示 uid 前缀，不含任何账号信息；换号时立即提示「账号已更新」\n#!system=ios,macos\n\n[MITM]\nhostname = %APPEND% api.chuckfang.com\n\n[Script]\nMeoW_capture = type=http-request, pattern=^https?://api\\.chuckfang\\.com(?::\\d+)?/, requires-body=1, max-size=-1, timeout=10, script-path=meow.capture.js\nMeoW_checkin = type=cron, cronexp=\"30 0 * * *\", timeout=30, script-path=meow.checkin.js\n",
   "scripts": [
