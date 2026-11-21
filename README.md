@@ -6,7 +6,7 @@
 
 | 插件 | 说明 | 导入链接 |
 | --- | --- | --- |
-| MeoW 自动签到 | 自动完成 MeoW 猫咪签到 | [导入 MeoW 自动签到](https://raw.githubusercontent.com/onmiui/MITM/main/MeoW%20%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0.mhm) |
+| MeoW 自动签到 | 自动完成 MeoW 猫咪签到 | [导入 MeoW 自动签到](https://raw.githubusercontent.com/onmiui/MITM/main/MeoW自动签到.mhm) |
 
 ## 使用方式
 
