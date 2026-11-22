@@ -2,13 +2,13 @@
   "format": "mhm",
   "schemaVersion": 1,
   "name": "MeoW 自动签到",
-  "desc": "按模块内定时脚本的时间自动完成 MeoW 猫咪签到（走 12500 签到端口）；首次打开「我的猫粮」页会自动捕获你自己的 unionId，通知会显示 uid 前缀，不含任何账号信息。换账号时会在第一个带新 unionId 的请求上立即提示「账号已更新」，并以最新 unionId 为准，旧账号的签到 URL 会被自动忽略，不会签错号。当天已签到会提示「今天已签到」并显示 uid。捕获提示只在首次捕获/签到 URL 变化时出现，60 秒内不重复。清空本地捕获：浏览器打开 https://api.chuckfang.com/__meow_reset__；每天 00:30 签到；失败则 02:00 自动补签（同一条 cron 的第二个时间点），成功则 02:00 跳过。",
-  "version": "1.5.13",
+  "desc": "按模块内定时脚本的时间自动完成 MeoW 猫咪签到（走 12500 签到端口）；首次打开「我的猫粮」页会自动捕获你自己的 unionId，通知会显示 uid 前缀，不含任何账号信息。换账号时会在第一个带新 unionId 的请求上立即提示「账号已更新」，并以最新 unionId 为准，旧账号的签到 URL 会被自动忽略，不会签错号。当天已签到会提示「今天已签到」并显示 uid。捕获提示只在首次捕获/签到 URL 变化时出现，60 秒内不重复。清空本地捕获：浏览器打开 https://api.chuckfang.com/__meow_reset__；每天 00:30 签到；02:00 由「MeoW 自动补签」模块检查并补签，成功则跳过。",
+  "version": "1.5.14",
   "author": "local",
   "homepage": "",
   "icon": "https://raw.githubusercontent.com/onmiui/MITM/main/icon/meow.png",
-  "updatedAt": "2026-11-23T02:38:00+08:00",
-  "content": "#!name=MeoW 自动签到\n#!desc=按模块内定时脚本的时间自动完成 MeoW 猫咪签到；首次打开「我的猫粮」页会自动捕获你自己的 unionId，通知会显示 uid 前缀，不含任何账号信息；换号时立即提示「账号已更新」\n#!system=ios,macos\n\n[MITM]\nhostname = %APPEND% api.chuckfang.com\n\n[Script]\nMeoW_capture = type=http-request, pattern=^https?://api\\.chuckfang\\.com(?::\\d+)?/, requires-body=1, max-size=-1, timeout=10, script-path=meow.capture.js\nMeoW_checkin = type=cron, cronexp=\"30 0,2 * * *\", timeout=30, script-path=meow.checkin.js\n",
+  "updatedAt": "2026-11-23T02:42:00+08:00",
+  "content": "#!name=MeoW 自动签到\n#!desc=按模块内定时脚本的时间自动完成 MeoW 猫咪签到；首次打开「我的猫粮」页会自动捕获你自己的 unionId，通知会显示 uid 前缀，不含任何账号信息；换号时立即提示「账号已更新」\n#!system=ios,macos\n\n[MITM]\nhostname = %APPEND% api.chuckfang.com\n\n[Script]\nMeoW_capture = type=http-request, pattern=^https?://api\\.chuckfang\\.com(?::\\d+)?/, requires-body=1, max-size=-1, timeout=10, script-path=meow.capture.js\nMeoW_checkin = type=cron, cronexp=\"30 0 * * *\", timeout=30, script-path=meow.checkin.js\n",
   "scripts": [
     {
       "name": "meow.capture.js",
