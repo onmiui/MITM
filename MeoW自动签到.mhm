@@ -2,7 +2,7 @@
   "format": "mhm",
   "schemaVersion": 1,
   "name": "MeoW 自动签到",
-  "desc": "自动完成 MeoW 每日签到：打开一次「我的猫粮」页自动捕获账号；按模块定时执行，失败自动重试。「点『打开配置页』可清空本地捕获」",
+  "desc": "自动完成 MeoW 每日签到：打开一次「我的猫粮」页自动捕获账号；按模块定时执行，失败自动重试。『点击「打开配置页」可清空本地捕获』",
   "version": "1.5.10.3",
   "author": "onmiui",
   "homepage": "https://github.com/onmiui/MITM",
